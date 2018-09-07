@@ -5,10 +5,7 @@ import time
 class TrafficLight:
     def startWork(self):
         for led in self.leds:
-            led.switch(True)
-            time.sleep(self.period)
-            led.switch(False)
-            time.sleep(self.period)
+            led.blink(0.5, 3)
         
         GPIO.cleanup()
 

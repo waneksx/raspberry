@@ -22,6 +22,13 @@ class Led:
     def setupOutput(self):
         GPIO.setup(self.pin, GPIO.OUT)
 
+    def blink(self, period, times):
+        for p in range(1, times):
+            self.switch(True)        
+            time.sleep(period) 
+            self.switch(False)        
+            time.sleep(period)
+
 #    def getInfo(self):
 #        return 'Color: {}; Pin: {}; Is swithed {};'.format(self.color self.pin self.isSwichedOn)
 
