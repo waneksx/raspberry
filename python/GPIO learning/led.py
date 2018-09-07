@@ -7,13 +7,13 @@ class Color(Enum):
     RED = 1
     GREEN = 2
     BLUE = 3
-    
+
 class Led:
     def __init__(self, color, pin, isSwitchedOn):
         self.color = color
         self.pin = pin
         self.isSwichedOn = isSwitchedOn
-        GPIO.setup(18, GPIO.OUT)
+        self.setupOutput()      
 
     def switch(self, value):
         self.isSwichedOn = value
