@@ -1,7 +1,33 @@
 import RPi.GPIO as GPIO
-im
+import led
+import time
 
-GPIO.setmode(GPIO.BCM)
-led = Led(Color.RED, 18, True)
-time.sleep(0.5)
-GPIO.cleanup()
+class TrafficLight
+
+    def __init__(self, leds, period):
+        GPIO.setmode(GPIO.BCM)
+        self.leds = leds
+        self.period = period
+        startWork()
+
+    def startWork(self):
+        for led in self.leds
+            led.switch(True)
+            time.sleep(self.period)
+            led.switch(False)
+            time.sleep(self.period)
+        
+        GPIO.cleanup()
+
+redLed = Led(Color.RED, 18, False)
+yellowLed = Led(Color.YELLOW, 23, False)
+greenLed = Led(Color.GREEN, 24, False)
+ 
+trafficLightLeds = list(redLed, yellowLed, greenLed)
+trafficLight = TrafficLight(trafficLightLeds, 1)
+
+
+
+
+
+

@@ -25,10 +25,7 @@ class Led:
 #    def getInfo(self):
 #        return 'Color: {}; Pin: {}; Is swithed {};'.format(self.color self.pin self.isSwichedOn)
 
-GPIO.setmode(GPIO.BCM)
-led = Led(Color.RED, 18, True)
-time.sleep(0.5)
-GPIO.cleanup()
+
 
 
 
