@@ -9,6 +9,8 @@ class TrafficLight:
             time.sleep(self.period)
             led.switch(False)
             time.sleep(self.period)
+        
+        GPIO.cleanup()
 
     def __init__(self, leds, period):
         GPIO.setmode(GPIO.BCM)
@@ -17,9 +19,14 @@ class TrafficLight:
         self.period = period
         self.startWork()    
         
+GPIO.setmode(GPIO.BCM)
 redLed = Led(Color.RED, 18, False)
 yellowLed = Led(Color.YELLOW, 23, False)
 greenLed = Led(Color.GREEN, 24, False)
  
-trafficLightLeds = list(redLed, yellowLed, greenLed)
+trafficLightLeds = list()
+trafficLightLeds.append(redLed)
+trafficLightLeds.append(yellowLed)
+trafficLightLeds.append(greenLed)
+
 trafficLight = TrafficLight(trafficLightLeds, 1)
