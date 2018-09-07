@@ -5,8 +5,8 @@ from enum import Enum
 class Color(Enum):
     NONE = 0
     RED = 1
-    GREEN = 2
-    BLUE = 3
+    YELLOW = 2
+    GREEN = 3
 
 class Led:
     def __init__(self, color, pin, isSwitchedOn):
