@@ -16,6 +16,10 @@ class Led:
         self.setupOutput()      
 
     def switch(self, value):
+        if(not value):
+            self.isSwichedOn = not self.isSwichedOn
+            GPIO.output(self.pin, not self.isSwichedOn)
+
         self.isSwichedOn = value
         GPIO.output(self.pin, value)
 
@@ -23,7 +27,7 @@ class Led:
         GPIO.setup(self.pin, GPIO.OUT)
 
     def blink(self, period, times):
-        for p in range(1, times):
+        for p in range(times):
             self.switch(True)        
             time.sleep(period) 
             self.switch(False)        

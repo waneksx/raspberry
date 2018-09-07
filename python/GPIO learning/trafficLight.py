@@ -4,8 +4,16 @@ import time
 
 class TrafficLight:
     def startWork(self):
-        for led in self.leds:
-            led.blink(0.5, 3)
+        redLed = self.leds[0]
+        yellowLed = self.leds[1]
+        greenLed = self.leds[2]
+
+        redLed.switch(True)
+        time.sleep(3)
+        redLed.blink(0.4, 3)
+        yellowLed.switch()
+        time.sleep(2)
+        greenLed.switch()
         
         GPIO.cleanup()
 
