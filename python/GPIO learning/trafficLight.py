@@ -17,7 +17,7 @@ class TrafficLight:
         yellowLed.switch(False)
         greenLed.switch(True)
         time.sleep(2)
-        yellowLed.switch(False)
+        greenLed.switch(False)
         
         GPIO.cleanup()
 
