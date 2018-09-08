@@ -16,14 +16,14 @@ class Led:
         self.setupOutput()      
 
     def switch(self, value = None):
-        print("switching light ", self.color, "to ", bool(not self.isSwichedOn))
+        print("Switching light ", self.color.name, "LED to ", bool(not self.isSwichedOn))
+
         if value is None:
             self.isSwichedOn = not self.isSwichedOn
             GPIO.output(self.pin, bool(not self.isSwichedOn))
-            pass
-
-        self.isSwichedOn = value
-        GPIO.output(self.pin, value)
+        else:
+            self.isSwichedOn = value
+            GPIO.output(self.pin, value)
 
     def setupOutput(self):
         GPIO.setup(self.pin, GPIO.OUT)
