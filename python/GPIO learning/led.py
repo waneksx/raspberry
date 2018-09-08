@@ -30,9 +30,9 @@ class Led:
 
     def blink(self, period, times):
         for p in range(times):
-            self.switch(True)        
+            self.switch(not self.isSwichedOn)
             time.sleep(period) 
-            self.switch(False)        
+            self.switch(self.isSwichedOn)     
             time.sleep(period)
 
 #    def getInfo(self):
