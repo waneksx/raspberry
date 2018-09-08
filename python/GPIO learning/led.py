@@ -20,6 +20,7 @@ class Led:
         if value is None:
             self.isSwichedOn = not self.isSwichedOn
             GPIO.output(self.pin, bool(not self.isSwichedOn))
+            pass
 
         self.isSwichedOn = value
         GPIO.output(self.pin, value)
