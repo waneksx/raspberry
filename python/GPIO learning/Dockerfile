@@ -1,5 +1,5 @@
 FROM python
 COPY . /app
 WORKDIR /app
-RUN apt-get -y install python-rpi.gpio
+RUN pip install RPi.GPIO
 CMD ["python", "trafficLight.py"]
