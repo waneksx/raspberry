@@ -29,10 +29,11 @@ class Led:
         GPIO.setup(self.pin, GPIO.OUT)
 
     def blink(self, period, times):
+        initialState = self.isSwichedOn
         for p in range(times):
-            self.switch(not self.isSwichedOn)
+            self.switch(not initialState)
             time.sleep(period) 
-            self.switch(self.isSwichedOn)     
+            self.switch(initialState)     
             time.sleep(period)
 
 #    def getInfo(self):
