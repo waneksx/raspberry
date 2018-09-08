@@ -17,7 +17,9 @@ class TrafficLight:
         yellowLed.switch(False)
         greenLed.switch(True)
         time.sleep(2)
+        yellowLed.switch(False)
         
+        GPIO.cleanup()
         GPIO.cleanup()
 
     def __init__(self, leds, period):
