@@ -13,8 +13,8 @@ class Led:
         print("init", color.name)
         self.color = color
         self.pin = pin
+        self.setupOutput()
         self.switch(isSwitchedOn)
-        self.setupOutput()      
 
     def switch(self, value = None):
         if value is None:
