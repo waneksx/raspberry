@@ -11,9 +11,12 @@ class TrafficLight:
         redLed.switch(True)
         time.sleep(3)
         redLed.blink(0.4, 3)
-        yellowLed.switch()
+        redLed.switch(False)
+        yellowLed.switch(True)
         time.sleep(2)
-        greenLed.switch()
+        yellowLed.switch(False)
+        greenLed.switch(True)
+        time.sleep(2)
         
         GPIO.cleanup()
 
@@ -22,8 +25,8 @@ class TrafficLight:
         print(leds, period)
         self.leds = leds
         self.period = period
-        self.startWork()    
-        
+        self.startWork()
+
 GPIO.setmode(GPIO.BCM)
 redLed = Led(Color.RED, 18, False)
 yellowLed = Led(Color.YELLOW, 23, False)

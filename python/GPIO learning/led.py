@@ -10,6 +10,7 @@ class Color(Enum):
 
 class Led:
     def __init__(self, color, pin, isSwitchedOn):
+        print("init", color.name)
         self.color = color
         self.pin = pin
         self.isSwichedOn = isSwitchedOn
