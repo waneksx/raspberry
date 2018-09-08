@@ -15,8 +15,8 @@ class Led:
         self.isSwichedOn = isSwitchedOn
         self.setupOutput()      
 
-    def switch(self, value):
-        if(not value):
+    def switch(self, value = None):
+        if value is None:
             self.isSwichedOn = not self.isSwichedOn
             GPIO.output(self.pin, not self.isSwichedOn)
 
